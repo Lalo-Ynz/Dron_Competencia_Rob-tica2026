@@ -1,0 +1,27 @@
+1.-Descargue o clone este repositorio en su equipo.
+2.-Extraiga el contenido del archivo comprimido conservando la estructura original del proyecto. El directorio principal debe contener las carpetas:
+    controllers/
+    libraries/
+    plugins/
+    protos/
+    worlds/
+3.-Instale Webots R2025a o una versión compatible.
+4.-Instale Python 3.10 o superior.
+5.-Instale las dependencias necesarias ejecutando:
+  pip install numpy opencv-python scipy matplotlib
+6.-Abra Webots y seleccione File → Open World...
+7.-Ingrese a la carpeta worlds del proyecto y abra el archivo .wbt correspondiente a la competencia (bebop_sim).
+8.-Verifique que el dron tenga asignado el controlador incluido dentro de la carpeta controllers. Si Webots solicita seleccionar un controlador, elija el que acompaña este repositorio.
+9.-Ejecute la simulación presionando Play. El controlador iniciará automáticamente todas las etapas de la misión sin necesidad de intervención del usuario.
+10.-Durante la simulación se abrirá una ventana externa de OpenCV denominada Foto_Aros, utilizada para visualizar el procesamiento de imágenes y la detección de los aros cuadrados. Esta ventana forma parte del funcionamiento normal del proyecto.
+11.-El controlador realiza automáticamente las siguientes tareas:
+  Despegue autónomo.
+  Navegación hasta el primer conjunto de aros.
+  Detección de aros cuadrados mediante visión artificial.
+  Centrado y cruce del aro detectado.
+  Giro controlado hacia la siguiente zona.
+  Navegación frente a la pizarra.
+  Detección y aproximación al marcador ArUco.
+  Desplazamiento hacia la plataforma final.
+  Aterrizaje automático.
+12.-Si la detección de los aros presenta baja precisión, se recomienda aumentar ligeramente la intensidad del parámetro emissiveColor del material utilizado en los aros dentro del mundo de Webots para incrementar el contraste de sus bordes.
