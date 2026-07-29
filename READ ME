@@ -1,3 +1,5 @@
+/// INSTRUCCIONES DE EJECUCION ///
+
 1.-Descargue o clone este repositorio en su equipo.
 2.-Extraiga el contenido del archivo comprimido conservando la estructura original del proyecto. El directorio principal debe contener las carpetas:
     controllers/
@@ -15,13 +17,49 @@
 9.-Ejecute la simulación presionando Play. El controlador iniciará automáticamente todas las etapas de la misión sin necesidad de intervención del usuario.
 10.-Durante la simulación se abrirá una ventana externa de OpenCV denominada Foto_Aros, utilizada para visualizar el procesamiento de imágenes y la detección de los aros cuadrados. Esta ventana forma parte del funcionamiento normal del proyecto.
 11.-El controlador realiza automáticamente las siguientes tareas:
-  Despegue autónomo.
-  Navegación hasta el primer conjunto de aros.
-  Detección de aros cuadrados mediante visión artificial.
-  Centrado y cruce del aro detectado.
-  Giro controlado hacia la siguiente zona.
-  Navegación frente a la pizarra.
-  Detección y aproximación al marcador ArUco.
-  Desplazamiento hacia la plataforma final.
-  Aterrizaje automático.
+ • Despegue autónomo.
+ • Navegación hasta el primer conjunto de aros.
+ • Detección de aros cuadrados mediante visión artificial.
+ • Centrado y cruce del aro detectado.
+ • Giro controlado hacia la siguiente zona.
+ • Navegación frente a la pizarra.
+ • Detección y aproximación al marcador ArUco.
+ • Desplazamiento hacia la plataforma final.
+ • Aterrizaje automático.
 12.-Si la detección de los aros presenta baja precisión, se recomienda aumentar ligeramente la intensidad del parámetro emissiveColor del material utilizado en los aros dentro del mundo de Webots para incrementar el contraste de sus bordes.
+
+/// ESTRUCTURA DEL PROYECTO ///
+
+El repositorio está organizado de acuerdo con la estructura estándar de Webots.
+
+controllers/
+Contiene los controladores escritos en Python. El controlador principal implementa toda la lógica de vuelo autónomo, incluyendo la navegación, el control PID, la detección de aros mediante OpenCV, la identificación de marcadores ArUco y la secuencia completa de las misiones.
+
+worlds/
+Contiene los archivos .wbt del escenario de simulación utilizados durante la competencia.
+
+protos/
+Almacena los modelos PROTO utilizados por Webots para construir el entorno de simulación.
+
+libraries/
+Carpeta destinada a bibliotecas adicionales del proyecto (si son necesarias).
+
+plugins/
+Contiene complementos utilizados por Webots en caso de requerirse durante la simulación.
+
+/// CONTROLADOR PRINCIPAL ///
+
+El archivo principal del proyecto es:
+
+controllers/Nuevo_Controlador_reestructurado/Nuevo_Controlador_reestructurado.py
+
+Este script implementa toda la lógica de la competencia mediante una máquina de estados. Entre sus principales funciones se encuentran:
+
+• Control de despegue y aterrizaje.
+• Control PID para estabilidad del dron.
+• Navegación mediante coordenadas.
+• Giros controlados sobre el eje de guiñada.
+• Detección de aros cuadrados mediante OpenCV.
+• Detección de marcadores ArUco.
+• Centrado automático antes de atravesar los aros.
+• Aproximación y aterrizaje sobre la plataforma final.
