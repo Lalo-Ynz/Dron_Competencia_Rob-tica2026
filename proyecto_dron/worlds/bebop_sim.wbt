@@ -1,0 +1,1463 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/manhole/protos/SquareManhole.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/chairs/protos/SimpleChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/cabinet/protos/Cabinet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/PlasticCrate.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/dji/mavic/protos/Mavic2Pro.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.3180377549749187 0.6776828125445833 -0.6630218638869888 1.1850128690139499
+  position -9.14249237507589 9.820345046967416 16.198721421533634
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+SquareManhole {
+  translation 3.82 -3.24 0
+}
+SquareManhole {
+  translation -2.99 -3.32 0
+  name "manhole(1)"
+}
+RectangleArena {
+  translation 0 1 0
+  floorSize 10 10
+  floorAppearance Parquetry {
+    type "dark strip"
+  }
+  wallHeight 4
+}
+Group {
+  children [
+    Solid {
+      translation -1.66 -1.17 1.23
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -3.16 -1.17 1.23
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(1)"
+    }
+    Solid {
+      translation -2.41 -1.17 1.97
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(4)"
+    }
+    Solid {
+      translation -2.41 -1.17 0.25
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+    }
+    Solid {
+      translation -2.41 -1.17 0.5
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(2)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation -0.26 -1.17037 1.5
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+            emissiveColor 0.3 0.3 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(2)"
+    }
+    Solid {
+      translation -1.24 -1.17 1.5
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+            emissiveColor 0.3 0.3 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 -1.17 2
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+            emissiveColor 0.3 0.3 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 -1.17 0.5
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 -1.17 1
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+            emissiveColor 0.3 0.3 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation -1.6596 -0.8 1.23
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(2)"
+    }
+    Solid {
+      translation -3.16 -0.8 1.23
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -2.41 -0.8 1.97
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -2.41 -0.8 0.25
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -2.41 -0.8 0.5
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation -1.6596 -0.43 1.23
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -3.16 -0.43 1.23
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -2.41 -0.43 1.97
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -2.41 -0.43 0.25
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -2.41 -0.43 0.5
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+PlasticCrate {
+  translation 2.52 -1.88 0
+  rotation 0 0 -1 -5.307179586466759e-06
+  name "plastic crate(3)"
+  size 0.78 0.57 0.36
+  color 0 0 0
+}
+Group {
+  children [
+    Solid {
+      translation -1.6596 -0.06 1.23
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -3.16 -0.06 1.23
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -2.41 -0.06 1.97
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -2.41 -0.06 0.25
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -2.41 -0.06 0.5
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation -1.6596 0.31 1.23
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -3.16 0.31 1.23
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -2.41 0.31 1.97
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -2.41 0.31 0.25
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -2.41 0.31 0.5
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation -0.26 -0.8 1.5
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -1.24 -0.8 1.5
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 -0.8 2
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 -0.8 0.5
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 -0.8 1
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation -0.26 -0.43 1.5
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -1.24 -0.43 1.5
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 -0.43 2
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 -0.43 0.5
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 -0.43 1
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation -0.26 -0.06 1.5
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -1.24 -0.06 1.5
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 -0.06 2
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 -0.06 0.5
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 -0.06 1
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation -0.26 0.31 1.5
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -1.24 0.31 1.5
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 0.31 2
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 0.31 0.5
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation -0.75 0.31 1
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 1 0
+          }
+          geometry Cylinder {
+            height 1
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation 0.62 -1.17037 1.75
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.14 -1.17 1.75
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 -1.17 2
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 -1.17 1.5
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 -1.17 0.75
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation 0.62 -0.8 1.75
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.14 -0.8 1.75
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 -0.8 2
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 -0.8 0.75
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 -0.8 1.5
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation 0.62 -0.43 1.75
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.14 -0.43 1.75
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 -0.43 2
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 -0.43 0.75
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 -0.43 1.5
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation 0.62 -0.06 1.75
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.14 -0.06 1.75
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 -0.06 2
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 -0.06 0.75
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 -0.06 1.5
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Group {
+  children [
+    Solid {
+      translation 0.62 0.31 1.75
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.14 0.31 1.75
+      rotation 0.7073882252434113 0.7068252250641434 5.083731618739203e-09 3.14159
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 0.31 2
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 0.31 0.75
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 1.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.38 0.31 1.5
+      rotation 0.577656895078166 0.5771968951617173 -0.5771968951617173 -2.093935307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Cylinder {
+            height 0.5
+            radius 0.01905
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+  ]
+}
+Solid {
+  translation -1.33 2.55 1.35
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.3 0
+      }
+      geometry Cylinder {
+        height 2.7
+        radius 0.15
+      }
+    }
+  ]
+  name "solid(3)"
+}
+Mavic2Pro {
+  hidden position_0_0 3.052522489464865e-09
+  hidden position_5_0 3.774784304536024e-05
+  hidden rotation_6 0 1 0 3.774783847714583e-05
+  hidden position_6_0 -3.9356576355791676e-07
+  hidden rotation_7 -1 0 0 3.9311963195422116e-07
+  translation -2.994870014720504 -3.320000050637485 0.11568635395792654
+  rotation 3.367353372904035e-05 -0.9999999605697463 0.0002787949051842488 0.0698027995643127
+  controller "Nuevo_Controlador_reestructurado"
+  cameraSlot [
+    Camera {
+      children [
+        Display {
+          width 320
+          height 240
+        }
+      ]
+      fieldOfView 1.5
+      width 400
+      height 240
+    }
+  ]
+}
+Solid {
+  translation 1.53 3.1 1.35
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.3 0
+      }
+      geometry Cylinder {
+        height 2.7
+        radius 0.15
+      }
+    }
+  ]
+  name "solid(3)"
+}
+Solid {
+  translation 2.87 -0.57 1.35
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.3 0
+      }
+      geometry Cylinder {
+        height 2.7
+        radius 0.15
+      }
+    }
+  ]
+  name "solid(3)"
+}
+SimpleChair {
+  translation -4.578839941798103 3.6285009401466413 -0.00014480416303919164
+  rotation 1.3931962452345124e-05 -0.9844191330041003 0.175837909397706 0.00016097176815203792
+  legColor 0 0 1
+  seatColor 0 0 1
+  mass 4
+}
+SimpleChair {
+  translation 4.601160001034571 0.5687400000000281 -0.0001448041630389696
+  rotation 7.923184414343953e-05 1.0833532802538714e-09 0.9999999968611576 -3.1415653071790426
+  name "simple chair(1)"
+  legColor 0 0 1
+  seatColor 0 0 1
+  mass 4
+}
+Cabinet {
+  translation -0.930003 5.95 0
+  rotation 0 0 -0.9999999999999999 1.5707953071795862
+  rowsHeights [
+    0.4, 0.6, 0.2, 0.2, 0.4, 0.4
+  ]
+  columnsWidths [
+    0.6, 0.3, 0.17
+  ]
+  layout [
+    "Drawer (3, 3, 1, 1, 1.5)"
+    "Drawer (2, 2, 1, 1, 1.5)"
+    "Drawer (3, 2, 1, 1, 1.5)"
+    "Drawer (1, 1, 3, 1, 3.5)"
+    "Shelf (1, 5, 3, 0)"
+    "Shelf (1, 4, 3, 0)"
+    "Shelf (1, 3, 3, 0)"
+    "Shelf (1, 2, 3, 0)"
+    "Shelf (1, 3, 0, 1)"
+    "Shelf (2, 3, 0, 1)"
+  ]
+}
+Cabinet {
+  translation 0.88 5.95 0
+  rotation 0 0 -0.9999999999999999 1.5707953071795862
+  name "cabinet(1)"
+  rowsHeights [
+    0.4, 0.6, 0.2, 0.2, 0.4, 0.4
+  ]
+  columnsWidths [
+    0.6, 0.3, 0.17
+  ]
+  layout [
+    "Drawer (3, 3, 1, 1, 1.5)"
+    "Drawer (2, 2, 1, 1, 1.5)"
+    "Drawer (3, 2, 1, 1, 1.5)"
+    "Drawer (1, 1, 3, 1, 3.5)"
+    "Shelf (1, 5, 3, 0)"
+    "Shelf (1, 4, 3, 0)"
+    "Shelf (1, 3, 3, 0)"
+    "Shelf (1, 2, 3, 0)"
+    "Shelf (1, 3, 0, 1)"
+    "Shelf (2, 3, 0, 1)"
+  ]
+}
+PlasticCrate {
+  translation 2.68 2.01 0
+  rotation 0 0 1 1.5708
+  name "plastic crate(1)"
+  size 0.78 0.57 0.36
+  color 0 0 0
+}
+PlasticCrate {
+  translation 1.68 -0.14 0
+  rotation 0 0 1 1.5708
+  name "plastic crate(2)"
+  size 0.78 0.57 0.36
+  color 0 0 0
+}
+Solid {
+  translation 4.92 2.86 2.03
+  children [
+    Shape {
+      geometry Box {
+        size 0.1 1.5 1.2
+      }
+    }
+  ]
+  name "solid(3)"
+}
+Solid {
+  translation 4.87 3.68 1.6
+  children [
+    Shape {
+      appearance Appearance {
+        texture ImageTexture {
+          url [
+            "../../../Downloads/aruco100.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(3)"
+}
