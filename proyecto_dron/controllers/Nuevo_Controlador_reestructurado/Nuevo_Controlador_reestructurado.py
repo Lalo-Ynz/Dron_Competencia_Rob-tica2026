@@ -155,7 +155,7 @@ TARGET_X1, TARGET_Y1, TARGET_Z1= -0.60, -3.32, 0.15
 tiempo_estabilizacion = 3.0
 inicio_timer= None
 
-# --- Inicialización de velocidades (evita locals()) ---
+# Inicialización de velocidades (evita locals()) 
 x_prev = 0.0
 y_prev = 0.0
 z_prev = 0.0
@@ -169,7 +169,7 @@ altura_objetivo = 1.65
 
 while robot.step(timestep) != -1:
 
-    # --- Sensores ---
+    # Sensores 
     pos = gps.getValues()
     x, y, altitude = pos
     ang = imu.getRollPitchYaw()
@@ -177,7 +177,7 @@ while robot.step(timestep) != -1:
     gyro = gyroscope.getValues()
     r_vel, p_vel, y_vel = gyro
 
-        # PROTECCIÓN GLOBAL ANTI-COMPLEX (poner aquí, cerca del inicio del loop)
+        # PROTECCIÓN GLOBAL ANTI-COMPLEX )
     if not math.isfinite(yaw):
         yaw = 0.0
     if not math.isfinite(roll):
@@ -187,7 +187,7 @@ while robot.step(timestep) != -1:
 
     dt = timestep / 1000.0
 
-    #--Vision de la camara
+    # Vision de la camara
     frame = image_to_mat(camera)
     frame_debug = frame.copy()
     aro_detectado = detectar_aros_cuadrados(frame)
@@ -218,10 +218,10 @@ while robot.step(timestep) != -1:
     )
     display.imagePaste(image_ref, 0, 0, False)
 
-    # --- Velocidad vertical ---
+    # Velocidad vertical 
     vz = (altitude - z_prev) / dt
     
-    # --- Velocidad horizontal ---
+    # Velocidad horizontal 
     vx = (x - x_prev) / dt
     vy = (y - y_prev) / dt
 
@@ -234,11 +234,11 @@ while robot.step(timestep) != -1:
     y_prev = y
     z_prev = altitude
 
-    # --- Estabilización de cámara ---
+    # Estabilización de cámara 
     mcr.setPosition(-0.115 * r_vel)
     mcp.setPosition(-0.1 * p_vel)
 
-    # ------ Misiones ordenadas por bloques -----------------
+    # Misiones ordenadas por bloques
     if estado_mision == MIS_INICIO:
 
         if estado_anterior != MIS_INICIO:
@@ -249,7 +249,7 @@ while robot.step(timestep) != -1:
             estado_anterior = MIS_INICIO
         altura_objetivo = 1.65
 
-        # --- ERRORES ---
+        # ERRORES 
         err_x = x_set - x
         err_y = y_set - y
 
@@ -258,7 +258,7 @@ while robot.step(timestep) != -1:
         err_x_body = cos_yaw * err_x + sin_yaw * err_y
         err_y_body = -sin_yaw * err_x + cos_yaw * err_y
 
-        # --- CONTROL HORIZONTAL ---
+        # CONTROL HORIZONTAL 
         vel_x_deseada = clamp(err_x_body * 2.0, -1.0, 1.0)
         vel_y_deseada = clamp(err_y_body * 2.0, -1.0, 1.0)
 
@@ -270,11 +270,11 @@ while robot.step(timestep) != -1:
             pitch_disturbance *= factor
             roll_disturbance  *= factor
 
-        # --- YAW ---
+        # YAW 
         yaw_error = math.atan2(math.sin(yaw_set - yaw), math.cos(yaw_set - yaw))
         yaw_input = clamp(yaw_error * 2.0, -1.0, 1.0) - y_vel
 
-        # --- TRANSICIÓN ---
+        # TRANSICIÓN 
         if abs(altitude - altura_objetivo) < 0.05:
             if inicio_timer is None:
                 inicio_timer = robot.getTime()
@@ -288,7 +288,7 @@ while robot.step(timestep) != -1:
 
     elif estado_mision == MIS_POS_ARO:
 
-        # --- DETECCIÓN DE ENTRADA ---
+        # DETECCIÓN DE ENTRADA 
         if estado_anterior != MIS_POS_ARO:
             yaw_fijo = yaw
             timer_frenado = None
@@ -296,11 +296,11 @@ while robot.step(timestep) != -1:
 
         altura_objetivo = 1.65
 
-        # --- YAW ---
+        # YAW 
         yaw_error = math.atan2(math.sin(yaw_fijo - yaw), math.cos(yaw_fijo - yaw))
         yaw_input = clamp(yaw_error * 2.0, -1.0, 1.0) - y_vel
 
-        # --- POSICIÓN ---
+        # POSICIÓN 
         target_x, target_y = -0.798, -3.33
 
         err_x_global = target_x - x
@@ -322,7 +322,7 @@ while robot.step(timestep) != -1:
         pitch_disturbance = clamp((vx_body - vel_x_deseada) * 3.0, -2.0, 2.0)
         roll_disturbance  = clamp(-(vy_body - vel_y_deseada) * 3.0, -2.0, 2.0)
 
-        # --- TRANSICIÓN MEJORADA ---
+        # TRANSICIÓN MEJORADA
         cond_pos = distancia < 0.12
         cond_vel = abs(vx_body) < 0.05 and abs(vy_body) < 0.05
 
@@ -338,7 +338,7 @@ while robot.step(timestep) != -1:
 
 
     elif estado_mision == MIS_GIRAR:
-        # --- DETECCIÓN DE ENTRADA ---
+        # DETECCIÓN DE ENTRADA
         if estado_anterior != MIS_GIRAR:
             yaw_inicio = yaw
             yaw_objetivo = yaw_inicio + 1.57  # giro relativo de 90°
@@ -348,17 +348,17 @@ while robot.step(timestep) != -1:
 
         altura_objetivo = 1.65
 
-        # --- YAW ---
+        # YAW
         yaw_error = math.atan2(math.sin(yaw_objetivo - yaw), math.cos(yaw_objetivo - yaw))
         yaw_input = clamp((1.2 * yaw_error) - (0.8 * y_vel), -1.0, 1.0)
 
-        # --- POSICIÓN (ANCLADO) ---
+        # POSICIÓN (ANCLADO)
         target_x, target_y = -0.691, -3.33
 
         err_x_global = target_x - x
         err_y_global = target_y - y
 
-        # --- YAW SUAVIZADO ---
+        # YAW SUAVIZADO
         yaw_error = math.atan2(math.sin(yaw_objetivo - yaw), math.cos(yaw_objetivo - yaw))
 
         # desaceleración progresiva cerca del objetivo
@@ -377,7 +377,7 @@ while robot.step(timestep) != -1:
         pitch_disturbance = clamp((vx_body - vel_x_deseada) * 1.8, -0.8, 0.8)
         roll_disturbance  = clamp(-(vy_body - vel_y_deseada) * 1.8, -0.8, 0.8)
 
-        # --- ESTABILIZACIÓN ---
+        # ESTABILIZACIÓN
         cond_altura = abs(altitude - altura_objetivo) < 0.05
         cond_yaw = abs(yaw_error) < 0.03 and abs(y_vel) < 0.05
 
@@ -537,7 +537,7 @@ while robot.step(timestep) != -1:
 
     elif estado_mision == MIS_ATRAVESAR_ARO:
             
-    # --- DETECCIÓN DE ENTRADA ---
+    # DETECCIÓN DE ENTRADA
             if estado_anterior != MIS_ATRAVESAR_ARO:
                 yaw_fijo = yaw
                 timer_frenado = None
@@ -545,11 +545,11 @@ while robot.step(timestep) != -1:
 
             altura_objetivo = 1.65
 
-            # --- YAW ---
+            # YAW
             yaw_error = math.atan2(math.sin(yaw_fijo - yaw), math.cos(yaw_fijo - yaw))
             yaw_input = clamp((2.2 * yaw_error) - (0.5 * y_vel), -1.8, 1.8)
 
-            # --- POSICIÓN ---
+            # POSICIÓN
             target_x, target_y = -0.798, 3.86
 
             err_x_global = target_x - x
@@ -565,18 +565,18 @@ while robot.step(timestep) != -1:
 
             gain_p = 1.0 if distancia > 0.15 else 0.4
 
-            # --- PRIORIDAD AL AVANCE ---
+            # PRIORIDAD AL AVANCE
             vel_x_deseada = clamp(err_x_body * 1.4, -0.45, 0.45)
             vel_y_deseada = clamp(err_y_body * 0.8, -0.18, 0.18)
 
             if abs(vy_body) < 0.015:
                 vy_body = 0.0
 
-            # --- CONTROL AMORTIGUADO ---
+            # CONTROL AMORTIGUADO
             pitch_disturbance = clamp((vx_body - vel_x_deseada) * 2.2, -1.2, 1.2)
             roll_disturbance = clamp(-(vy_body - vel_y_deseada) * 1.5, -0.7, 0.7)
 
-            # --- TRANSICIÓN MEJORADA ---
+            # TRANSICIÓN MEJORADA 
             cond_pos = distancia < 0.12
             cond_vel = abs(vx_body) < 0.05 and abs(vy_body) < 0.05
 
@@ -601,14 +601,14 @@ while robot.step(timestep) != -1:
 
         altura_objetivo = 1.65
 
-        # --- YAW SUAVIZADO ---
+        # YAW SUAVIZADO
         yaw_error = math.atan2(math.sin(yaw_objetivo - yaw), math.cos(yaw_objetivo - yaw))
         factor_suavizado = clamp(abs(yaw_error) / 1.57, 0.25, 1.0)
 
         yaw_input = ((1.05 * yaw_error * factor_suavizado) - (1.6 * y_vel))
         yaw_input = clamp(yaw_input, -0.75, 0.75)
 
-        # --- POSICIÓN (ANCLADO) ---
+        # POSICIÓN (ANCLADO)
         target_x, target_y = -0.78, 3.86
 
         err_x_global = target_x - x
@@ -626,7 +626,7 @@ while robot.step(timestep) != -1:
         pitch_disturbance = clamp((vx_body - vel_x_deseada) * 1.8, -0.8, 0.8)
         roll_disturbance  = clamp(-(vy_body - vel_y_deseada) * 1.8, -0.8, 0.8)
 
-        # --- ESTABILIZACIÓN ---
+        # ESTABILIZACIÓN
         cond_altura = abs(altitude - altura_objetivo) < 0.05
         cond_yaw = abs(yaw_error) < 0.03 and abs(y_vel) < 0.05
 
@@ -845,6 +845,7 @@ while robot.step(timestep) != -1:
         m2.setVelocity(0.0)
         m3.setVelocity(0.0)
         m4.setVelocity(0.0)
+        
  # --- CONTROL GLOBAL  ---
 
     # ALTURA
@@ -856,10 +857,7 @@ while robot.step(timestep) != -1:
     roll_input  = k_roll_p * clamp(roll, -1.0, 1.0) + r_vel + roll_disturbance
     pitch_input = k_pitch_p * clamp(pitch, -1.0, 1.0) + p_vel + pitch_disturbance
 
-        # --- CONTROL GLOBAL  ---
-    # (después de tu bloque de altura y antes de setear motores)
-
-        # === PROTECCIÓN FUERTE ANTI-COMPLEX ===
+        # PROTECCIÓN FUERTE ANTI-COMPLEX
     if 'roll_disturbance' not in locals() or not math.isfinite(roll_disturbance):
         roll_disturbance = 0.0
     if 'pitch_disturbance' not in locals() or not math.isfinite(pitch_disturbance):
@@ -875,7 +873,6 @@ while robot.step(timestep) != -1:
         thrust_actual = k_vertical_thrust
 
     # MOTORES
-        # ====================== CONTROL DE MOTORES ======================
         if estado_mision == MIS_ATERRIZAJE:
             m1.setVelocity(0.0)
             m2.setVelocity(0.0)
